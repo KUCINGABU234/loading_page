@@ -5,7 +5,7 @@ import sys
 def loading_animation():
     animation = "|/-\\"
     for i in range(20):
-        sys.stdout.write("\rMemuat " + animation[i % len(animation)])
+        sys.stdout.write("\rMemproses " + animation[i % len(animation)])
         sys.stdout.flush()
         time.sleep(0.4)
 
