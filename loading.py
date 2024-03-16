@@ -1,12 +1,22 @@
-import sys
+import curses
 import time
 
-def loading_animation():
-    animation = "|/-\\"
-    for i in range(20):
-        sys.stdout.write("\r" + animation[i % len(animation)])
-        sys.stdout.flush()
-        time.sleep(0.1)
+def loading_animation(window):
+    window.clear()
+    curses.curs_set(0)  # Hide the cursor
+    window.addstr(0, 0, "Loading...")
 
-loading_animation()
-print("\nLoading selesai.")
+    for i in range(1, 11):
+        window.addstr(2, 0, "[" + "#" * i + "-" * (10 - i) + "]")
+        window.refresh()
+        time.sleep(0.2)
+
+    window.addstr(4, 0, "Loading complete!")
+    window.refresh()
+    time.sleep(1)
+
+def main(stdscr):
+    loading_animation(stdscr)
+    stdscr.getch()
+
+curses.wrapper(main)
