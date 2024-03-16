@@ -4,12 +4,12 @@ import time
 def loading_animation(window):
     window.clear()
     curses.curs_set(0)  # Hide the cursor
-    window.addstr(0, 0, "Loading...")
+    window.addstr(0, 0, "Loading... (wait)")
 
     for i in range(1, 11):
-        window.addstr(2, 0, "[" + "#" * i + "-" * (10 - i) + "]")
+        window.addstr(2, 0, "[" + "•" * i + "-" * (10 - i) + "]")
         window.refresh()
-        time.sleep(8.5)
+        time.sleep(0.5)
 
     window.addstr(4, 0, "Loading complete!")
     window.refresh()
