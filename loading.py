@@ -9,7 +9,7 @@ def loading_animation(window):
     for i in range(1, 11):
         window.addstr(2, 0, "[" + "#" * i + "-" * (10 - i) + "]")
         window.refresh()
-        time.sleep(0.2)
+        time.sleep(8.5)
 
     window.addstr(4, 0, "Loading complete!")
     window.refresh()
