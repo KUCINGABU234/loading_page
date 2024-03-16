@@ -1,26 +1,12 @@
+from progressbar import ProgressBar
 import time
-import os
-import sys
 
-def loading_animation():
-    animation = "|/-\\"
-    for i in range(20):
-        sys.stdout.write("\rMemproses " + animation[i % len(animation)])
-        sys.stdout.flush()
-        time.sleep(0.4)
+# Membuat objek ProgressBar dengan gaya "Fancy"
+pbar = ProgressBar(widgets=['Loading: ', ' ', progressbar.widgets.Bar(marker='■', left='[', right=']'), ' ', progressbar.widgets.Percentage(), ' ', progressbar.widgets.Timer()], maxval=10).start()
 
-def clear_screen():
-    # Membersihkan layar terminal atau command prompt
-    os.system('cls' if os.name == 'nt' else 'clear')
+# Membuat range 
+for i in range(10):
+    time.sleep(0.5)  # Menggunakan sleep untuk simulasi pekerjaan yang sedang berlangsung
+    pbar.update(i+1)
 
-# Memulai animasi loading
-loading_animation()
-
-# Membersihkan layar
-clear_screen()
-
-# Mendapatkan waktu saat ini
-current_time = time.strftime("%H:%M:%S")
-
-# Menampilkan waktu saat ini
-print("JAM:", current_time)
+pbar.finish()
