@@ -6,8 +6,8 @@
 - loading2.py
 
 
-# About
-A simple loading screen with python
+# Update 
+Add loading v2
 
 
 # What Do You Need
