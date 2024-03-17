@@ -6,5 +6,6 @@ UPDATE
 A simple loading screen with python
 
 
-# How to use
--
+# What Do You Need (termux)
+-python 
+-tqdm 
