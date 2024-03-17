@@ -11,5 +11,5 @@ Add loading v2
 
 
 # What Do You Need
--tqdm 
--tkinter (tk)
+- tqdm 
+- tkinter (tk)
